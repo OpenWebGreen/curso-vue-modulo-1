@@ -1,0 +1,17 @@
+{
+  "name": "curso-vue",
+  "version": "1.0.0",
+  "description": "Curso de VueJs (inicializando o aprendizado)",
+  "scripts": {
+    "dev": "poi ./main.js"
+  },
+  "author": "Felipe Bohnert Paetzold",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.55",
+    "poi": "^10.2.9"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
