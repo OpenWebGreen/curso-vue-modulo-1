@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <form @submit.prevent="submeterForm">
+  <div class="center-flex">
+    <div v-if="loading">Carregando dados para o formulário...</div>
+    <form v-else @submit.prevent="submeterForm">
       <div>
         <label>
           Nome:
@@ -39,6 +40,7 @@
 export default {
   data() {
     return {
+      loading: false,
       pessoa: { endereco: {} }
     }
   },
@@ -48,7 +50,28 @@ export default {
 
       this.pessoa = { endereco: {} }
     }
+  },
+  created() {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false
+      this.pessoa = {
+        nome: 'Web Green',
+        idade: 2,
+        endereco: { rua: 'Rua dos Bobos' },
+        sexo: 'm'
+      }
+    }, 2000)
   }
 }
 </script>
 
+<style scoped>
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+</style>
