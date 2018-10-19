@@ -1,7 +1,7 @@
 <template>
   <div class="center-flex">
-    <div v-if="loading">Carregando dados para o formulário...</div>
-    <form v-else @submit.prevent="submeterForm">
+    <loading :in-loading='loading' />
+    <form v-if='!loading' @submit.prevent="submeterForm">
       <div>
         <label>
           Nome:
@@ -37,7 +37,10 @@
 </template>
 
 <script>
+import Loading from './components/Loading'
+
 export default {
+  components: { Loading },
   data() {
     return {
       loading: false,
