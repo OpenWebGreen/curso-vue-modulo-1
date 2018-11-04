@@ -1,6 +1,6 @@
 <template>
   <div class="center-flex">
-    <loading :in-loading='loading' />
+    <loading v-if='loading' />
     <form v-if='!loading' @submit.prevent="submeterForm">
       <div>
         <label>
